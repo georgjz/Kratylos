@@ -1,5 +1,8 @@
 {
   "legacyEditor": false,
   "livePreview": true,
-  "vimMode": true
+  "vimMode": true,
+  "alwaysUpdateLinks": true,
+  "useTab": false,
+  "showInlineTitle": false
 }

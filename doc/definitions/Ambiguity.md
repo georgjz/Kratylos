@@ -1,0 +1,2 @@
+# Ambiguity of Context-Free Grammars
+A string $s \in L(G)$ derives ambiguously in [[Context-Free Grammar|context-free grammar]] $G$ if there are two or more different [[Derivation|derivations]]. $G$ is considered ambiguous if it derives some string ambiguously. Ambiugity is undecidable.
