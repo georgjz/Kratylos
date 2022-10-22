@@ -1,4 +1,5 @@
 # Kleene Closure
+
 The Kleene star operator $^{\ast}$, also called Kleene closure, is a unary operator on sets of symbols or set of strings. The Kleene closure of a set $V$ is denoted as 
 
 $$
@@ -15,8 +16,8 @@ Further
 $$
 \begin{aligned}
 V^{0} \; &= \; \{\epsilon\}  \\ 
-V^{1} \; &= V\; \\
-V^{i+1} \; &= \{wv: w \in V^{i} \; 
+V^{1} \; &= \; V\; \\
+V^{i+1} \; &= \; \{wv: w \in V^{i} \; 
 \text{and} \; v \in V\}
 \end{aligned}
 $$
@@ -29,6 +30,3 @@ $$
 
 ## Properties
 Kleene closure is [[Idempotence|idempotent]], that is, $(V^{\ast})^{\ast} \; = \; V^{\ast}$.
-
-
-
