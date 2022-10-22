@@ -1,3 +1,5 @@
 {
-  "cssTheme": "80s Neon"
+  "cssTheme": "80s Neon",
+  "baseFontSize": 14,
+  "accentColor": ""
 }
