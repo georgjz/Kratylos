@@ -1,4 +1,5 @@
 # Design
+
 *Kratylos* needs to support a varity of functions that can operate on grammars as a whole:
 
 ```scheme

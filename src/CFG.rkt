@@ -8,6 +8,7 @@
                (start-sybmol : Nonterminal)
                (productions  : (Listof Production))))
 
+  ;; FIXME: A lot of this is nonsense.
   ;; A Nonterminal is a symbol/atom
   (define-type Nonterminal Symbol)
 
@@ -20,48 +21,65 @@
   ;; A SententialForm is a list of GrammarSymbols
   (define-type SententialForm (Listof GrammarSymbol))
 
-  ;; A Production is a tuple of a Nonterminal, and a (possibly empty) list of SententialForms
+  ;; A Production is a tuple of a Nonterminal, and a list of SententialForms
   (define-type Production (Pair Nonterminal (Listof SententialForm)))
 
   ;; A Context is a list which elements are either Terminals or Nonterminals.
   (define-type Context (Listof (U Nonterminal Terminal)))
 
-  ;; A Derivation
-  ; (define-type)
+  ;;;;;; Property Checks: These functions check properties of a given context-free grammar.
 
-  ; ? this doesn't make sense
-  ; Nonterminal -> Production -> Context
-  ; Applies a production to a nonterminal
-
-  ; Context -> CFG -> Context
-  ; Left/Right-derive a given context from a CFG
-
-  ; String -> CFG -> Bool
-  ; Checks whether an input string is element of L(G), aka, can be derived from a given CFG
-
-  ; String -> CFG -> AST
-  ; Derivation of a given String from a given CFG
-  ; (: derive (-> String CFG AST))
-  ; (define derive
-  ;   (lambda (string cfg) '()))
-
-  ; Nonterminal -> CFG -> Bool
-  ; Checks whether a nonterminal is reachable in a given CFG
-  (: reachable? (-> Nonterminal CFG Bool))
-  (define reachable?
-    (lambda (nonterminal cfg) #f))
-
-  ; CFG -> Bool
-  ; Checks whether a CFG is ambiguous
-  (: ambiguous? (-> CFG Bool))
+  ; CFG -> Boolean
+  ; Checks whether a CFG is ambiguous. UNDECIDABLE.
+  (: ambiguous? (-> CFG Boolean))
   (define ambiguous?
     (lambda (cfg) #f))
 
-  ; CFG -> Bool
+  ; Nonterminal -> CFG -> Boolean
+  ; Checks whether a nonterminal is productive in a given CFG
+  (: productive? (-> Nonterminal CFG Boolean))
+  (define productive?
+    (lambda (nonterminal cfg) #f))
+
+  ; Nonterminal -> CFG -> Boolean
+  ; Checks whether a nonterminal is reachable in a given CFG
+  (: reachable? (-> Nonterminal CFG Boolean))
+  (define reachable?
+    (lambda (nonterminal cfg) #f))
+
+  ; Nonterminal -> CFG -> Boolean
+  ; Checks whether a nonterminal is useful
+  (: useful? (-> Nonterminal CFG Boolean))
+  (define useful?
+    (lambda (nonterminal cfg)
+      (or (productive? nonterminal cfg)
+          (reachable? nonterminal cfg))))
+
+  ; Nonterminal -> CFG -> Boolean
+  ; Checks whether a nonterminal is nullable in a given CFG
+  (: nullable? (-> Nonterminal CFG Boolean))
+  (define nullable?
+    (lambda (nonterminal cfg) #f))
+
+  ; CFG -> Boolean
   ; Checks whether there's at least one cycle derivation in a given CFG
-  (: cyclic? (-> CFG Bool))
+  (: cyclic? (-> CFG Boolean))
   (define cyclic?
     (lambda (cfg) #f))
+
+  ; CFG -> Boolean
+  ; Checks whether the productions in a CFG are left-recursive
+  (: left-recursive? (-> CFG Boolean))
+  (define left-recursive?
+    (lambda (cfg) #f))
+
+  ; CFG -> Boolean
+  ; Checks whether the productions in a CFG are right-recursive
+  (: right-recursive? (-> CFG Boolean))
+  (define right-recursive?
+    (lambda (cfg) #f))
+
+  ;;;;;; Manipulation: These functions manipulate a given context-free grammar to return a new one.
 
   ; CFG -> CFG
   ; Left-factors a given CFG
@@ -69,10 +87,7 @@
   (define left-factor
     (lambda (cfg) cfg))
 
-  ; CFG -> Bool
-  ; Checks whether the productions in a CFG are left-recursive
-  (: left-recursive? (-> CFG Bool))
-  (define left-recursive?
-    (lambda (cfg) #f))
+  ;;;;; Transformations: These functions transform a given context-free grammar into an equivalent one
+
 
 ) ; module
