@@ -66,7 +66,7 @@ A nonterminal $X \in V$ is [[Usability|useless]] if it is [[Productivity|unprodu
 A nonterminal $X \in V$ is [[Nullability|nullable]] if there is a derivation $X \; \xRightarrow{\ast} \; \epsilon$. Decidable.
 
 ###### Cyclicity
-A derivation $X \; \xRightarrow{+} \; X$ is called a [[Cycle|cycle]]. Decidable.
+A derivation $X \; \xRightarrow{+} \; X$ is called a [[Cyclicity|cycle]]. Decidable.
 
 ###### Left and Right Recursion
 A grammar $G$ is [[Recursion#Left Recursion|left recursive]] if it has a nonterminal $X$ such that there is a derivation $X \; \xRightarrow{+} \; X\alpha$ for any string $\alpha$.
