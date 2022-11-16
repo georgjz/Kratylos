@@ -30,7 +30,7 @@ $$
 \def\or{{\quad \; \mid \quad}}
 
 &A     &&\pro &&\beta_1 A' \or \beta_2 A' \or ... \or \beta_n A'  \\
-&A'    &&\pro &&\alpha_1 A' \or \alpha_2 A' \or ... \or \alpha_m A' \or \epsilon  \\
+&A'    &&\pro &&\alpha_1 \or \alpha_2 \or ... \or \alpha_m \or \epsilon  \\
 
 \end{alignat*}
 $$
