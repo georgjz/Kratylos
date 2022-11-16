@@ -70,3 +70,5 @@ A derivation $X \; \xRightarrow{+} \; X$ is called a [[Cyclicity|cycle]]. Decida
 
 ###### Left and Right Recursion
 A grammar $G$ is [[Recursion#Left Recursion|left recursive]] if it has a nonterminal $X$ such that there is a derivation $X \; \xRightarrow{+} \; X\alpha$ for any string $\alpha$.
+
+A grammar $G$ is [[Recursion#Right Recursion|right recursive]] if it has a nonterminal $X$ such that there is a derivation $X \; \xRightarrow{+} \; \alpha X$ for any string $\alpha$.
