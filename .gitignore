@@ -1,0 +1,6 @@
+# Racket stuff
+compiled/
+
+# Obsidian stuff
+workspace
+workspace.json
